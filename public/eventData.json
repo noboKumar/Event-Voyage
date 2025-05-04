@@ -1,0 +1,93 @@
+[
+    {
+      "id": "event_001",
+      "name": "Tech Innovators Conference 2025",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/tech-event.jpg",
+      "category": "Technology",
+      "date": "2025-05-15",
+      "location": "Dhaka Convention Center, Dhaka",
+      "entry_fee": 500,
+      "description": "An exclusive gathering of tech leaders and innovators from across the region to discuss future trends, AI, and startup culture."
+    },
+    {
+      "id": "event_002",
+      "name": "Startup Pitch Night 2025",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/startup-pitch.jpg",
+      "category": "Business",
+      "date": "2025-06-10",
+      "location": "Innovation Hub, Banani, Dhaka",
+      "entry_fee": 300,
+      "description": "Join a night of groundbreaking startup pitches, networking, and investor insights in a dynamic entrepreneurial atmosphere."
+    },
+    {
+      "id": "event_003",
+      "name": "Green Future Expo",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/green-expo.jpg",
+      "category": "Environment",
+      "date": "2025-07-22",
+      "location": "BICC, Agargaon, Dhaka",
+      "entry_fee": 200,
+      "description": "Explore innovations in sustainability, renewable energy, eco-living, and green businesses at this eco-friendly exhibition."
+    },
+    {
+      "id": "event_004",
+      "name": "Art & Craft Fair 2025",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/art-fair.jpg",
+      "category": "Art",
+      "date": "2025-08-18",
+      "location": "Shilpakala Academy, Dhaka",
+      "entry_fee": 100,
+      "description": "Meet talented artisans, attend DIY workshops, and shop handmade items at the biggest creative event of the year."
+    },
+    {
+      "id": "event_005",
+      "name": "Code Warriors Hackathon",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/hackathon.jpg",
+      "category": "Technology",
+      "date": "2025-09-05",
+      "location": "North South University, Dhaka",
+      "entry_fee": 0,
+      "description": "Team up and build innovative solutions in 36 hours of intense coding, learning, and collaboration with tech mentors."
+    },
+    {
+      "id": "event_006",
+      "name": "Dhaka Music Fest",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/music-fest.jpg",
+      "category": "Music",
+      "date": "2025-10-25",
+      "location": "Army Stadium, Dhaka",
+      "entry_fee": 800,
+      "description": "Experience a high-energy celebration of local and international music performances across genres and cultures."
+    },
+    {
+      "id": "event_007",
+      "name": "Creative Writing Workshop",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/writing-workshop.jpg",
+      "category": "Workshop",
+      "date": "2025-11-12",
+      "location": "British Council, Dhaka",
+      "entry_fee": 150,
+      "description": "Sharpen your storytelling skills and unlock creativity with this interactive writing and publishing workshop."
+    },
+    {
+      "id": "event_008",
+      "name": "Bangladesh Science Olympiad",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/science-olympiad.jpg",
+      "category": "Education",
+      "date": "2025-12-01",
+      "location": "University of Dhaka, Curzon Hall",
+      "entry_fee": 250,
+      "description": "Compete with the brightest minds in physics, chemistry, and biology in this prestigious student competition."
+    },
+    {
+      "id": "event_009",
+      "name": "Local Heritage Photo Walk",
+      "thumbnail": "https://i.ibb.co/ZYW3VTp/photo-walk.jpg",
+      "category": "Photography",
+      "date": "2026-01-07",
+      "location": "Old Dhaka, starting from Lalbagh Fort",
+      "entry_fee": 100,
+      "description": "Capture the charm of Old Dhaka with expert guides and fellow photography enthusiasts."
+    }
+  ]
+  
