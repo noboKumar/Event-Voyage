@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="w-3/10 shadow space-y-5 mx-auto my-20 p-10 rounded-2xl border-2 border-base-300">
+    <div className="md:w-3/10 shadow space-y-5 md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
       <title>Log In Now</title>
       <h1 className="text-4xl font-semibold">Login Now!</h1>
       {/* email */}

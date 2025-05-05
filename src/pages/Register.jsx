@@ -6,9 +6,63 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="w-3/10 shadow space-y-5 mx-auto my-20 p-10 rounded-2xl border-2 border-base-300">
+    <div className="md:w-3/10 shadow space-y-5 md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
       <title>Please Register</title>
       <h1 className="text-4xl font-semibold">Please Register</h1>
+      {/* user name */}
+      <label className="input validator">
+        <svg
+          className="h-[1em] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </g>
+        </svg>
+        <input
+          type="text"
+          required
+          placeholder="Username"
+          pattern="[A-Za-z][A-Za-z0-9\-]*"
+          minlength="3"
+          maxlength="30"
+          title="Only letters, numbers or dash"
+        />
+      </label>
+      {/* photo url */}
+      <label className="input validator">
+        <svg
+          className="h-[1em] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </g>
+        </svg>
+        <input
+          type="url"
+          required
+          placeholder="Photo URL"
+          pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
+          title="Must be valid URL"
+        />
+      </label>
       {/* email */}
       <label className="input validator">
         <svg
@@ -65,7 +119,9 @@ const Register = () => {
         </button>
       </label>
       {/* login button */}
-      <button className="btn flex btn-primary text-white">Create Account</button>
+      <button className="btn flex btn-primary text-white">
+        Create Account
+      </button>
       {/* google login */}
       <button className="btn bg-white text-black border-[#e5e5e5]">
         <svg
