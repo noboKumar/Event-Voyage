@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../Root";
 import Home from "../pages/Home";
 import Error from "../pages/Error";
+import MyProfile from "../pages/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "/profile",
+        Component: MyProfile,
       },
     ],
   },
