@@ -2,7 +2,7 @@
     {
       "id": "event_001",
       "name": "Tech Innovators Conference 2025",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/tech-event.jpg",
+      "thumbnail": "https://i.ibb.co.com/3yQqF5Hc/The-Future-of-enterprise-technology-24-1024x682-1.jpg",
       "category": "Technology",
       "date": "2025-05-15",
       "location": "Dhaka Convention Center, Dhaka",
@@ -12,7 +12,7 @@
     {
       "id": "event_002",
       "name": "Startup Pitch Night 2025",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/startup-pitch.jpg",
+      "thumbnail": "https://i.ibb.co.com/Y4LGHcH9/58e3d45cb3ce-20241111-Pitch-Night-07.jpg",
       "category": "Business",
       "date": "2025-06-10",
       "location": "Innovation Hub, Banani, Dhaka",
@@ -22,7 +22,7 @@
     {
       "id": "event_003",
       "name": "Green Future Expo",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/green-expo.jpg",
+      "thumbnail": "https://i.ibb.co.com/HpGrbpRh/GE14-Exhibits-2-660x440.jpg",
       "category": "Environment",
       "date": "2025-07-22",
       "location": "BICC, Agargaon, Dhaka",
@@ -32,7 +32,7 @@
     {
       "id": "event_004",
       "name": "Art & Craft Fair 2025",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/art-fair.jpg",
+      "thumbnail": "https://i.ibb.co.com/j9zgTx71/Fine-arts-craft-fair.jpg",
       "category": "Art",
       "date": "2025-08-18",
       "location": "Shilpakala Academy, Dhaka",
@@ -42,7 +42,7 @@
     {
       "id": "event_005",
       "name": "Code Warriors Hackathon",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/hackathon.jpg",
+      "thumbnail": "https://i.ibb.co.com/Ldwnm4fC/VQyr-PPyh-FGd-V2-BJtlcw-Dphesnx-ERD6-SLWv-Gt-ARyg-LDVNSs-Xh-FF0kz-G-y-Xv-Lyi-AR.jpg",
       "category": "Technology",
       "date": "2025-09-05",
       "location": "North South University, Dhaka",
@@ -52,7 +52,7 @@
     {
       "id": "event_006",
       "name": "Dhaka Music Fest",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/music-fest.jpg",
+      "thumbnail": "https://i.ibb.co.com/7xsgFPqB/217149415.jpg",
       "category": "Music",
       "date": "2025-10-25",
       "location": "Army Stadium, Dhaka",
@@ -62,7 +62,7 @@
     {
       "id": "event_007",
       "name": "Creative Writing Workshop",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/writing-workshop.jpg",
+      "thumbnail": "https://i.ibb.co.com/pjcQY9YN/RLSF0013.jpg",
       "category": "Workshop",
       "date": "2025-11-12",
       "location": "British Council, Dhaka",
@@ -72,7 +72,7 @@
     {
       "id": "event_008",
       "name": "Bangladesh Science Olympiad",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/science-olympiad.jpg",
+      "thumbnail": "https://i.ibb.co.com/gM58q8fQ/DSC-1536.jpg",
       "category": "Education",
       "date": "2025-12-01",
       "location": "University of Dhaka, Curzon Hall",
@@ -81,13 +81,14 @@
     },
     {
       "id": "event_009",
-      "name": "Local Heritage Photo Walk",
-      "thumbnail": "https://i.ibb.co/ZYW3VTp/photo-walk.jpg",
-      "category": "Photography",
+      "name": "Dhaka Marathon 2026",
+      "thumbnail": "https://i.ibb.co.com/M57mbF9T/1082505.webp",
+      "category": "Sports",
       "date": "2026-01-07",
-      "location": "Old Dhaka, starting from Lalbagh Fort",
-      "entry_fee": 100,
-      "description": "Capture the charm of Old Dhaka with expert guides and fellow photography enthusiasts."
+      "location": "Hatirjheel Amphitheatre, Dhaka",
+      "entry_fee": 300,
+      "description": "Join thousands of runners in the annual Dhaka Marathon — a celebration of endurance, community spirit, and fitness."
     }
+    
   ]
   
