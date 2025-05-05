@@ -37,7 +37,7 @@ const sliderData = [
 
 const Slider = () => {
   return (
-    <div className="relative w-full">
+    <div className="relative md:w-full">
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay, Keyboard]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -52,13 +52,13 @@ const Slider = () => {
         {sliderData.map((slider, index) => (
           <SwiperSlide key={index}>
             <img
-              className="w-full h-[700px] rounded-2xl object-cover"
+              className="w-full h-[300px] md:h-[700px] rounded-2xl object-cover"
               src={slider.imgUrl}
               alt=""
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-2xl"></div>
-            <div className="absolute top-3/6 left-20 z-10 text-white w-6/12 space-y-5 text-shadow-2xs">
-              <h1 className="text-4xl font-bold">{slider.title}</h1>
+            <div className="absolute top-5 left-5 md:top-3/6 md:left-20 z-10 text-white w-4/6 md:w-6/12 md:space-y-5 text-shadow-2xs">
+              <h1 className="md:text-4xl text-2xl font-bold">{slider.title}</h1>
               <p>{slider.description}</p>
             </div>
           </SwiperSlide>

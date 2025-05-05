@@ -43,7 +43,7 @@ const NavBar = () => {
               {navBarLinks}
             </ul>
           </div>
-          <Link className="btn btn-ghost text-2xl">
+          <Link className="btn btn-ghost md:text-2xl">
             Event <span className="text-primary">Voyage</span>
           </Link>
         </div>
