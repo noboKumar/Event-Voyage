@@ -1,7 +1,6 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
-import { FaUserCircle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
@@ -38,7 +37,7 @@ const NavBar = () => {
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="cursor-pointer lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -68,12 +67,12 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-xl">{navBarLinks}</ul>
         </div>
-        <div className="navbar-end gap-5">
+        <div className="navbar-end gap-2 md:gap-5">
           <Tooltip id="user-tooltip">{user?.displayName}</Tooltip>
           {user && (
             <a data-tooltip-id="user-tooltip">
               <img
-                className="w-15 h-15 object-cover rounded-full border-2 p-1 cursor-pointer"
+                className="w-10 h-10 md:w-15 md:h-15 object-cover rounded-full border-2 md:p-1 cursor-pointer"
                 src={user.photoURL}
                 alt=""
               />
@@ -83,12 +82,12 @@ const NavBar = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="btn btn-primary text-white"
+              className="btn btn-primary text-white px-1 md:px-5"
             >
               Log Out
             </button>
           ) : (
-            <Link to={"/login"} className="btn btn-primary text-white">
+            <Link to={"/login"} className="btn btn-primary text-white px-1 md:px-5">
               Log In
             </Link>
           )}

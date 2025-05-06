@@ -7,6 +7,8 @@ import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import PrivateRouter from "./PrivateRouter";
 import Blogs from "../pages/Blogs";
+import EventDetails from "../pages/EventDetails";
+import Loading from "../components/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,16 @@ export const router = createBrowserRouter([
             <Blogs></Blogs>
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/eventDetails/:id",
+        element: (
+          <PrivateRouter>
+            <EventDetails></EventDetails>
+          </PrivateRouter>
+        ),
+        loader: () => fetch("/eventData.json"),
+        hydrateFallbackElement: <Loading></Loading>
       },
     ],
   },
