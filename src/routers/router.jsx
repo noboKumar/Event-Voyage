@@ -42,7 +42,8 @@ export const router = createBrowserRouter([
             <MyBookings></MyBookings>
           </PrivateRouter>
         ),
-        loader: () => fetch("/bookingsData.jsx"),
+        loader: () => fetch("/bookingsData.json"),
+        hydrateFallbackElement: <Loading></Loading>
       },
       {
         path: "/eventDetails/:id",

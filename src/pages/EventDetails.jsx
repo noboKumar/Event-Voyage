@@ -37,8 +37,8 @@ const EventDetails = () => {
       />
       <div className="md:flex items-center">
         <div className="space-y-3 py-5">
-          <h1 className="text-4xl font-semibold">{event.name}</h1>
-          <p className="text-2xl md:w-4/6">{event.description}</p>
+          <h1 className="md:text-4xl text-2xl font-semibold">{event.name}</h1>
+          <p className="md:text-2xl md:w-4/6">{event.description}</p>
           <p className="flex items-center md:text-xl gap-2">
             <IoTime size={25} />
             {event.date}
