@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoTime } from "react-icons/io5";
 import { MdAttachMoney } from "react-icons/md";
@@ -26,7 +27,9 @@ const EventDetails = () => {
 
   return (
     <div className="w-11/12 mx-auto mt-10">
-      <title>{id}</title>
+      <Helmet>
+        <title>{id}</title>
+      </Helmet>
       <img
         className="rounded w-full max-h-[700px]"
         src={event.thumbnail}

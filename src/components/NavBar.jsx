@@ -13,9 +13,11 @@ const NavBar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li>
-        <NavLink to={"/blogs"}>Blogs</NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink to={"/myBookings"}>My Bookings</NavLink>
+        </li>
+      )}
       <li>
         <NavLink to={"/profile"}>My profile</NavLink>
       </li>
@@ -37,7 +39,11 @@ const NavBar = () => {
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="cursor-pointer lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="cursor-pointer lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -87,7 +93,10 @@ const NavBar = () => {
               Log Out
             </button>
           ) : (
-            <Link to={"/login"} className="btn btn-primary text-white px-1 md:px-5">
+            <Link
+              to={"/login"}
+              className="btn btn-primary text-white px-1 md:px-5"
+            >
               Log In
             </Link>
           )}

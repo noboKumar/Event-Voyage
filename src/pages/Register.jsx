@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,8 +23,10 @@ const Register = () => {
         const userData = result.user;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (passwordRegex.test(password) === false) {
-          setPasswordError("Password must have an Uppercase a Lowercase and at least 6 character");
-          return
+          setPasswordError(
+            "Password must have an Uppercase a Lowercase and at least 6 character"
+          );
+          return;
         }
 
         console.log(user);
@@ -31,7 +34,7 @@ const Register = () => {
         updateUser({ displayName: userName, photoURL: photo })
           .then(() => {
             setUser({ ...userData, displayName: userName, photoURL: photo });
-            setPasswordError("")
+            setPasswordError("");
           })
           .catch((error) => {
             console.log(error);
@@ -74,7 +77,9 @@ const Register = () => {
 
   return (
     <div className="md:w-3/10 shadow space-y-2 md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
-      <title>Please Register</title>
+      <Helmet>
+        <title>Please Register</title>
+      </Helmet>
       <h1 className="text-4xl font-semibold">Please Register</h1>
       {/* user name */}
       <form onSubmit={handleRegister} className="space-y-4">

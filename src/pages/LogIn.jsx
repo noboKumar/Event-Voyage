@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -77,7 +78,9 @@ const LogIn = () => {
 
   return (
     <div className="md:w-3/10 space-y-5 shadow md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
-      <title>Log In Now</title>
+      <Helmet>
+        <title>Login Now</title>
+      </Helmet>
       <h1 className="text-4xl font-semibold">Login Now!</h1>
       {/* email */}
       <form onSubmit={handleLogIn} className="space-y-4">

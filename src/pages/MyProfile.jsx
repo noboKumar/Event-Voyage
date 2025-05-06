@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Helmet } from "react-helmet";
 
 const MyProfile = () => {
-    return (
-        <div>
-            <title>Event Voyage - Profile</title>
-            This is my profile
-        </div>
-    );
+  return (
+    <div>
+      <Helmet>
+        <title>Profile | Event Voyage</title>
+      </Helmet>
+      This is my profile
+    </div>
+  );
 };
 
 export default MyProfile;

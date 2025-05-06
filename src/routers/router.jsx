@@ -6,9 +6,9 @@ import MyProfile from "../pages/MyProfile";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import PrivateRouter from "./PrivateRouter";
-import Blogs from "../pages/Blogs";
 import EventDetails from "../pages/EventDetails";
 import Loading from "../components/Loading";
+import MyBookings from "../pages/MyBookings";
 
 export const router = createBrowserRouter([
   {
@@ -36,12 +36,13 @@ export const router = createBrowserRouter([
         Component: Register,
       },
       {
-        path: "/blogs",
+        path: "/myBookings",
         element: (
           <PrivateRouter>
-            <Blogs></Blogs>
+            <MyBookings></MyBookings>
           </PrivateRouter>
         ),
+        loader: () => fetch("/bookingsData.jsx"),
       },
       {
         path: "/eventDetails/:id",
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: () => fetch("/eventData.json"),
-        hydrateFallbackElement: <Loading></Loading>
+        hydrateFallbackElement: <Loading></Loading>,
       },
     ],
   },
