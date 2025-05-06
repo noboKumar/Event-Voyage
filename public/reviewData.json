@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "img": "https://randomuser.me/api/portraits/women/44.jpg",
+      "name": "Ayesha Rahman",
+      "occupation": "Graphic Designer",
+      "review": "The event was well-organized and the ambiance was perfect. I’ll definitely attend again!"
+    },
+    {
+      "id": 2,
+      "img": "https://randomuser.me/api/portraits/men/32.jpg",
+      "name": "Tariq Hasan",
+      "occupation": "Software Engineer",
+      "review": "Smooth ticketing process and very informative workshops. Highly recommended."
+    },
+    {
+      "id": 3,
+      "img": "https://randomuser.me/api/portraits/women/65.jpg",
+      "name": "Farzana Alam",
+      "occupation": "Event Blogger",
+      "review": "Loved the cultural vibe and networking opportunities. Great job by the organizers!"
+    },
+    {
+      "id": 4,
+      "img": "https://randomuser.me/api/portraits/men/76.jpg",
+      "name": "Nayeem Chowdhury",
+      "occupation": "Entrepreneur",
+      "review": "One of the best local events I’ve been to. Well coordinated and very professional."
+    },
+    {
+      "id": 5,
+      "img": "https://randomuser.me/api/portraits/women/33.jpg",
+      "name": "Ruma Khatun",
+      "occupation": "Marketing Specialist",
+      "review": "Excellent speakers and engaging activities. Great platform to discover new events."
+    }
+]
+  

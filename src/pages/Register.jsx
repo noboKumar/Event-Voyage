@@ -6,7 +6,9 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, setUser, googleLogIn, updateUser } = use(AuthContext);
+  const [passwordError, setPasswordError] = useState("");
+  const { createUser, user, setUser, googleLogIn, updateUser } =
+    use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,16 +19,23 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
+        const userData = result.user;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (passwordRegex.test(password) === false) {
+          setPasswordError("Password must have an Uppercase a Lowercase and at least 6 character");
+          return
+        }
+
         console.log(user);
 
         updateUser({ displayName: userName, photoURL: photo })
           .then(() => {
-            setUser({...user, displayName: userName, photoURL: photo});
+            setUser({ ...userData, displayName: userName, photoURL: photo });
+            setPasswordError("")
           })
           .catch((error) => {
             console.log(error);
-            setUser(user)
+            setUser(userData);
           });
         Swal.fire({
           title: `welcome ${user.displayName}`,
@@ -46,12 +55,12 @@ const Register = () => {
   const handleGoogleRegister = () => {
     googleLogIn()
       .then((result) => {
-        console.log(result);
         Swal.fire({
-          title: `welcome ${result.displayName}`,
+          title: `welcome ${result.user.displayName}`,
           text: "Successfully Created Account",
           icon: "success",
         });
+        console.log(result);
       })
       .catch((error) => {
         console.log(error);
@@ -91,10 +100,8 @@ const Register = () => {
             name="name"
             required
             placeholder="Username"
-            pattern="[A-Za-z][A-Za-z0-9\-]*"
             minLength="3"
             maxLength="30"
-            title="Only letters, numbers or dash"
           />
         </label>
         {/* photo url */}
@@ -148,7 +155,6 @@ const Register = () => {
             required
           />
         </label>
-        <div className="validator-hint hidden">Enter valid email address</div>
         {/* password */}
         <label className="input validator">
           <svg
@@ -185,6 +191,7 @@ const Register = () => {
             {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
           </button>
         </label>
+        <p className="text-red-500 text-sm">{passwordError}</p>
         {/* login button */}
         <button className="btn flex btn-primary text-white">
           Create Account

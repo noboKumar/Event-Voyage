@@ -1,6 +1,6 @@
 import React, { use, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import Swal from "sweetalert2";
 
@@ -8,6 +8,9 @@ const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { logIn, googleLogIn, forgetPassword } = use(AuthContext);
   const emailRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -21,6 +24,7 @@ const LogIn = () => {
           text: "Successfully Logged In",
           icon: "success",
         });
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         Swal.fire({

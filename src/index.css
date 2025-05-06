@@ -22,3 +22,7 @@
 .active{
     @apply underline
 }
+
+.swiper-scrollbar{
+  display: none;
+}

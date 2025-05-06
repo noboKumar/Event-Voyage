@@ -15,7 +15,7 @@ const NavBar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/about"}>about</NavLink>
+        <NavLink to={"/blogs"}>Blogs</NavLink>
       </li>
       <li>
         <NavLink to={"/profile"}>My profile</NavLink>
@@ -69,8 +69,8 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1 text-xl">{navBarLinks}</ul>
         </div>
         <div className="navbar-end gap-5">
-          <Tooltip id="user-tooltip">{user.displayName}</Tooltip>
-          {user ? (
+          <Tooltip id="user-tooltip">{user?.displayName}</Tooltip>
+          {user && (
             <a data-tooltip-id="user-tooltip">
               <img
                 className="w-15 h-15 object-cover rounded-full border-2 p-1 cursor-pointer"
@@ -78,8 +78,6 @@ const NavBar = () => {
                 alt=""
               />
             </a>
-          ) : (
-            <FaUserCircle size={40} />
           )}
 
           {user ? (
