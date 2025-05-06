@@ -1,18 +1,82 @@
-import React, { useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthContext";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { logIn, googleLogIn, forgetPassword } = use(AuthContext);
+  const emailRef = useRef();
+
   const handleLogIn = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    logIn(email, password)
+      .then((result) => {
+        Swal.fire({
+          title: `welcome, ${result.user.displayName}`,
+          text: "Successfully Logged In",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.code}`,
+        });
+      });
   };
+
+  const handleGoogleLogIn = () => {
+    googleLogIn()
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          title: `welcome ${result.displayName}`,
+          text: "Successfully Logged In",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.code}`,
+        });
+      });
+  };
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    forgetPassword(email)
+      .then(() => {
+        Swal.fire({
+          title: "Email Sent Successfully",
+          text: "Please Check Your Email",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.code}`,
+        });
+      });
+  };
+
   return (
     <div className="md:w-3/10 space-y-5 shadow md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
       <title>Log In Now</title>
       <h1 className="text-4xl font-semibold">Login Now!</h1>
       {/* email */}
-      <form onSubmit={handleLogIn} className=" space-y-4">
+      <form onSubmit={handleLogIn} className="space-y-4">
         <label className="input validator">
           <svg
             className="h-[1em] opacity-50"
@@ -31,6 +95,7 @@ const LogIn = () => {
             </g>
           </svg>
           <input
+            ref={emailRef}
             name="email"
             type="email"
             placeholder="mail@site.com"
@@ -74,11 +139,20 @@ const LogIn = () => {
             {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
           </button>
         </label>
-        <p className="underline text-gray-500">Forget Password?</p>
+        <p
+          onClick={handleForgetPassword}
+          className="underline text-gray-500 cursor-pointer active:text-primary"
+        >
+          Forget Password?
+        </p>
         {/* login button */}
         <button className="btn flex btn-primary text-white">Login</button>
         {/* google login */}
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          type="button"
+          onClick={handleGoogleLogIn}
+          className="btn bg-white text-black border-[#e5e5e5]"
+        >
           <svg
             aria-label="Google logo"
             width="16"

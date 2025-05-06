@@ -1,7 +1,14 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../provider/AuthContext";
+import { FaUserCircle } from "react-icons/fa";
+import Swal from "sweetalert2";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const NavBar = () => {
+  const { user, logOut } = use(AuthContext);
+
   const navBarLinks = (
     <>
       <li>
@@ -15,6 +22,17 @@ const NavBar = () => {
       </li>
     </>
   );
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          title: "You Have been Logged out",
+          icon: "success",
+        });
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="shadow-sm bg-base-200 ">
       <div className="navbar w-11/12 mx-auto">
@@ -50,8 +68,32 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-xl">{navBarLinks}</ul>
         </div>
-        <div className="navbar-end">
-          <Link to={"/login"} className="btn btn-primary text-white">Log In</Link>
+        <div className="navbar-end gap-5">
+          <Tooltip id="user-tooltip">{user.displayName}</Tooltip>
+          {user ? (
+            <a data-tooltip-id="user-tooltip">
+              <img
+                className="w-15 h-15 object-cover rounded-full border-2 p-1 cursor-pointer"
+                src={user.photoURL}
+                alt=""
+              />
+            </a>
+          ) : (
+            <FaUserCircle size={40} />
+          )}
+
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn btn-primary text-white"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link to={"/login"} className="btn btn-primary text-white">
+              Log In
+            </Link>
+          )}
         </div>
       </div>
     </div>

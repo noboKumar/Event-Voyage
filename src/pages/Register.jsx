@@ -2,22 +2,64 @@ import React, { use, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, googleLogIn, updateUser } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
+    const userName = e.target.name.value;
+    const photo = e.target.url.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        setUser(user);
+        console.log(user);
+
+        updateUser({ displayName: userName, photoURL: photo })
+          .then(() => {
+            setUser({...user, displayName: userName, photoURL: photo});
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user)
+          });
+        Swal.fire({
+          title: `welcome ${user.displayName}`,
+          text: "Successfully Created Account",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.code}`,
+        });
+      });
+  };
+
+  const handleGoogleRegister = () => {
+    googleLogIn()
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          title: `welcome ${result.displayName}`,
+          text: "Successfully Created Account",
+          icon: "success",
+        });
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.code}`,
+        });
       });
   };
 
@@ -148,7 +190,11 @@ const Register = () => {
           Create Account
         </button>
         {/* google login */}
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          onClick={handleGoogleRegister}
+          type="button"
+          className="btn bg-white text-black border-[#e5e5e5]"
+        >
           <svg
             aria-label="Google logo"
             width="16"
