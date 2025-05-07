@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../provider/AuthContext";
 import { FaEdit } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const { user, updateUser, setUser } = use(AuthContext);
@@ -21,6 +22,11 @@ const MyProfile = () => {
           ...user,
           displayName: userName || user.displayName,
           photoURL: photo || user.photoURL,
+        });
+        Swal.fire({
+          title: "Your Profile has been Updated",
+          text: "",
+          icon: "success",
         });
       })
       .catch((error) => {

@@ -19,8 +19,8 @@ const EventDetails = () => {
   const handleReserveSeat = (e) => {
     e.preventDefault();
     Swal.fire({
-      title: "seat Booked",
-      text: "Successfully booked a seat",
+      title: "Successfully booked a seat",
+      text: "",
       icon: "success",
     });
   };
