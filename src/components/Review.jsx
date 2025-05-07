@@ -34,7 +34,6 @@ const Review = () => {
           loop={data.length > 3}
           spaceBetween={50}
           slidesPerView={1}
-          navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           keyboard={{ enabled: true }}
@@ -42,7 +41,7 @@ const Review = () => {
           {data.map((reviewData, index) => (
             <SwiperSlide className="py-10 space-y-2" key={index}>
               <img className="mx-auto rounded-full border-2 p-1 border-gray-300" src={reviewData.img} alt="" />
-              <h2 className="text-xl w-4/10 mx-auto">"{reviewData.review}"</h2>
+              <h2 className="text-xl md:w-4/10 mx-auto">"{reviewData.review}"</h2>
               <h3 className="text-2xl font-semibold">{reviewData.name}</h3>
               <p>{reviewData.occupation}</p>
             </SwiperSlide>

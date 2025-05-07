@@ -62,7 +62,6 @@ const Register = () => {
           text: "Successfully Created Account",
           icon: "success",
         });
-        console.log(result);
       })
       .catch((error) => {
         console.log(error);
@@ -75,7 +74,7 @@ const Register = () => {
   };
 
   return (
-    <div className="md:w-3/10 shadow space-y-2 md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
+    <div className="lg:w-2/10 md:w-5/10 shadow space-y-2 md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
       <Helmet>
         <title>Please Register</title>
       </Helmet>

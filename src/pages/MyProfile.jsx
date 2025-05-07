@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const { user, updateUser, setUser } = use(AuthContext);
-  console.log(user);
   const handleEditProfile = (e) => {
     e.preventDefault();
 

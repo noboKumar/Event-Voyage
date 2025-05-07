@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn, googleLogIn, email, setEmail, user } = use(AuthContext);
+  const { logIn, googleLogIn, email, setEmail } = use(AuthContext);
   const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
@@ -42,9 +42,8 @@ const LogIn = () => {
   const handleGoogleLogIn = () => {
     googleLogIn()
       .then((result) => {
-        console.log(result);
         Swal.fire({
-          title: `welcome ${user?.displayName}`,
+          title: `welcome ${result.user.displayName}`,
           text: "Successfully Logged In",
           icon: "success",
         });
@@ -60,7 +59,7 @@ const LogIn = () => {
   };
 
   return (
-    <div className="md:w-3/10 space-y-5 shadow md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
+    <div className="lg:w-2/10 md:w-5/10 space-y-5 shadow md:mx-auto mx-2 my-20 p-10 rounded-2xl border-2 border-base-300">
       <Helmet>
         <title>Login Now</title>
       </Helmet>

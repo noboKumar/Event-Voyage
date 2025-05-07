@@ -32,7 +32,9 @@ const NavBar = () => {
           icon: "success",
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="shadow-sm bg-base-200 ">

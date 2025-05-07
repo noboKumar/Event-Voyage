@@ -44,7 +44,6 @@ const Slider = () => {
         loop={true}
         spaceBetween={50}
         slidesPerView={1}
-        navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         keyboard={{ enabled: true }}

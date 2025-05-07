@@ -1,10 +1,10 @@
 # Event Voyage - A Local Event Discovery PlatForm
 
 **Purpose:**  
-Event Explorer is a web application designed to help users discover, explore, and get detailed information about upcoming local events like conferences, workshops, sports events, art exhibitions, and more. Users can log in, browse events, view detailed info.
+Event Explorer is a web application designed to help users discover, explore, and get detailed information about upcoming local events like conferences, workshops, sports events, art exhibitions, and more. Users can log in, browse events, view detailed info and reserve Seat.
 
 **Live URL:**  
-[Event Explorer Live](https://ph-assignment-09-event-voyage.netlify.app/)
+[Live Link](https://ph-assignment-09-event-voyage.netlify.app/)
 
 ---
 
@@ -13,7 +13,7 @@ Event Explorer is a web application designed to help users discover, explore, an
 - Browse and discover local events.
 - Upcoming Event discovery.
 - View Event Details.
-- User Can Reserve set for any Event.
+- User Can Reserve seat for any Event.
 - User authentication and login system.
 - Responsive design for mobile and desktop.
 
@@ -39,4 +39,3 @@ Event Explorer is a web application designed to help users discover, explore, an
 - **sweetalert2** – Show Success or Error alerts
 - **swiper** – Slider View
 
----

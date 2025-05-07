@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 const CountUpSection = () => {
   return (
     <div className="bg-gray-200 rounded-2xl shadow-sm my-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-20 px-10 w-11/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-20 px-10 w-11/12 mx-auto space-y-5">
         <div className="text-center">
           <p className="text-2xl">Total Clients</p>
           <CountUp
