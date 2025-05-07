@@ -7,11 +7,10 @@ import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn, googleLogIn, forgetPassword } = use(AuthContext);
+  const { logIn, googleLogIn, email, setEmail } = use(AuthContext);
   const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -36,6 +35,10 @@ const LogIn = () => {
       });
   };
 
+  const handleEmailOnChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleGoogleLogIn = () => {
     googleLogIn()
       .then((result) => {
@@ -43,26 +46,6 @@ const LogIn = () => {
         Swal.fire({
           title: `welcome ${result.displayName}`,
           text: "Successfully Logged In",
-          icon: "success",
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `${error.code}`,
-        });
-      });
-  };
-
-  const handleForgetPassword = () => {
-    const email = emailRef.current.value;
-    forgetPassword(email)
-      .then(() => {
-        Swal.fire({
-          title: "Email Sent Successfully",
-          text: "Please Check Your Email",
           icon: "success",
         });
       })
@@ -107,6 +90,8 @@ const LogIn = () => {
             type="email"
             placeholder="mail@site.com"
             required
+            defaultValue={email}
+            onChange={handleEmailOnChange}
           />
         </label>
         <div className="validator-hint hidden">Enter valid email address</div>
@@ -146,12 +131,11 @@ const LogIn = () => {
             {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
           </button>
         </label>
-        <p
-          onClick={handleForgetPassword}
-          className="underline text-gray-500 cursor-pointer active:text-primary"
-        >
-          Forget Password?
-        </p>
+        <Link to={"/forgetPassword"}>
+          <p className="underline text-gray-500 cursor-pointer active:text-primary py-2">
+            Forget Password?
+          </p>
+        </Link>
         {/* login button */}
         <button className="btn flex btn-primary text-white">Login</button>
         {/* google login */}

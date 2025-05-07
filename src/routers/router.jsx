@@ -9,6 +9,7 @@ import PrivateRouter from "./PrivateRouter";
 import EventDetails from "../pages/EventDetails";
 import Loading from "../components/Loading";
 import MyBookings from "../pages/MyBookings";
+import ForgetPassword from "../pages/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
         Component: Register,
       },
       {
+        path: "/forgetPassword",
+        Component: ForgetPassword,
+      },
+      {
         path: "/myBookings",
         element: (
           <PrivateRouter>
@@ -43,7 +48,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: () => fetch("/bookingsData.json"),
-        hydrateFallbackElement: <Loading></Loading>
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "/eventDetails/:id",
