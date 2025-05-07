@@ -28,7 +28,6 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const userData = result.user;
-        console.log(userData);
 
         updateUser({ displayName: userName, photoURL: photo })
           .then(() => {
@@ -59,7 +58,7 @@ const Register = () => {
     googleLogIn()
       .then((result) => {
         Swal.fire({
-          title: `welcome ${result.user.displayName}`,
+          title: `welcome ${result.user?.displayName}`,
           text: "Successfully Created Account",
           icon: "success",
         });

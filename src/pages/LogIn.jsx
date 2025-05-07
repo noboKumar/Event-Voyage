@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn, googleLogIn, email, setEmail } = use(AuthContext);
+  const { logIn, googleLogIn, email, setEmail, user } = use(AuthContext);
   const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,7 +44,7 @@ const LogIn = () => {
       .then((result) => {
         console.log(result);
         Swal.fire({
-          title: `welcome ${result.displayName}`,
+          title: `welcome ${user?.displayName}`,
           text: "Successfully Logged In",
           icon: "success",
         });
