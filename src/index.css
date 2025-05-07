@@ -19,10 +19,11 @@
   font-family: "Poppins", sans-serif;
 }
 
-.active{
-    @apply underline
+.active {
+  @apply bg-primary
+    text-white;
 }
 
-.swiper-scrollbar{
+.swiper-scrollbar {
   display: none;
 }

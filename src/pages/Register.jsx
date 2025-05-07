@@ -81,8 +81,8 @@ const Register = () => {
         <title>Please Register</title>
       </Helmet>
       <h1 className="text-4xl font-semibold">Please Register</h1>
-      {/* user name */}
       <form onSubmit={handleRegister} className="space-y-4">
+      {/* user name */}
         <label className="input validator">
           <svg
             className="h-[1em] opacity-50"
