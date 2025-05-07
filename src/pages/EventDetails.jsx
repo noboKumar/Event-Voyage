@@ -28,7 +28,7 @@ const EventDetails = () => {
   return (
     <div className="w-11/12 mx-auto mt-10">
       <Helmet>
-        <title>{id}</title>
+        <title>{id} | Event Voyage</title>
       </Helmet>
       <img
         className="rounded w-full max-h-[700px]"

@@ -80,8 +80,8 @@ const NavBar = () => {
           {user && (
             <a data-tooltip-id="user-tooltip">
               <img
-                className="w-10 h-10 md:w-15 md:h-15 object-cover rounded-full border-2 md:p-1 cursor-pointer"
-                src={user.photoURL}
+                className="w-10 h-10 md:w-15 md:h-15 object-cover rounded-full border-2 border-gray-400 md:p-1 cursor-pointer"
+                src={user?.photoURL}
                 alt=""
               />
             </a>

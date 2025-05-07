@@ -46,7 +46,7 @@ const MyProfile = () => {
           <img
             className="w-56 h-56 mx-auto rounded-full object-cover border-4 p-1 border-base-300"
             src={user?.photoURL}
-            alt="user photo"
+            alt=""
           />
           <div className="border-2 border-base-300"></div>
           <div className="space-y-2">

@@ -127,7 +127,7 @@ const LogIn = () => {
               setShowPassword(!showPassword);
             }}
           >
-            {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+            {showPassword ?<FaEye size={16} />: <FaEyeSlash size={16} /> }
           </button>
         </label>
         <Link to={"/forgetPassword"}>

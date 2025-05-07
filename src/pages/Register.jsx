@@ -190,7 +190,7 @@ const Register = () => {
               setShowPassword(!showPassword);
             }}
           >
-            {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+            {showPassword ? <FaEye size={16} /> : <FaEyeSlash size={16} />}
           </button>
         </label>
         <p className="text-red-500 text-sm">{passwordError}</p>
