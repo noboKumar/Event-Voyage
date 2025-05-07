@@ -4,8 +4,31 @@ import { AuthContext } from "../provider/AuthContext";
 import { FaEdit } from "react-icons/fa";
 
 const MyProfile = () => {
-  const { user } = use(AuthContext);
+  const { user, updateUser, setUser } = use(AuthContext);
   console.log(user);
+  const handleEditProfile = (e) => {
+    e.preventDefault();
+
+    const userName = e.target.name.value;
+    const photo = e.target.url.value;
+
+    updateUser({
+      displayName: userName || user.displayName,
+      photoURL: photo || user.photoURL,
+    })
+      .then(() => {
+        setUser({
+          ...user,
+          displayName: userName || user.displayName,
+          photoURL: photo || user.photoURL,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        setUser(user);
+      });
+  };
+
   return (
     <div className="w-11/12 mx-auto py-10 flex gap-5">
       <Helmet>
@@ -17,12 +40,14 @@ const MyProfile = () => {
         <div className="text-center space-y-4 border-4 border-base-300 py-10 px-5 lg:py-10 lg:px-20 rounded-2xl my-8">
           <img
             className="w-56 h-56 mx-auto rounded-full object-cover border-4 p-1 border-base-300"
-            src={user.photoURL}
+            src={user?.photoURL}
             alt="user photo"
           />
           <div className="border-2 border-base-300"></div>
           <div className="space-y-2">
-            <h1 className="md:text-4xl text-2xl font-semibold">Name: {user.displayName}</h1>
+            <h1 className="md:text-4xl text-2xl font-semibold">
+              Name: {user.displayName}
+            </h1>
             <p className="md:text-2xl">Email: {user.email}</p>
           </div>
           <div className="shadow my-8 mx-2 md:p-10 p-5 rounded-2xl border-2 border-base-300">
@@ -31,7 +56,7 @@ const MyProfile = () => {
               <FaEdit />
             </h1>
             <div className="bg-primary w-8 h-1 my-2"></div>
-            <form className="space-y-5">
+            <form onSubmit={handleEditProfile} className="space-y-5">
               {/* user name */}
               <label className="input validator">
                 <svg
@@ -53,7 +78,6 @@ const MyProfile = () => {
                 <input
                   type="text"
                   name="name"
-                  required
                   placeholder="Username"
                   minLength="3"
                   maxLength="30"
