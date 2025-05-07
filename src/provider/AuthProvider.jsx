@@ -69,7 +69,9 @@ const AuthProvider = ({ children }) => {
     forgetPassword,
     updateUser,
   };
+
   return <AuthContext value={userInfo}>{children}</AuthContext>;
+  
 };
 
 export default AuthProvider;

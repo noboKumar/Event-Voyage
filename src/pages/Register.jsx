@@ -8,8 +8,7 @@ import { Helmet } from "react-helmet";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
-  const { createUser, user, setUser, googleLogIn, updateUser } =
-    use(AuthContext);
+  const { createUser, setUser, googleLogIn, updateUser } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -18,35 +17,36 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (passwordRegex.test(password) === false) {
+      setPasswordError(
+        "Password must have an Uppercase a Lowercase and at least 6 character"
+      );
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         const userData = result.user;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        if (passwordRegex.test(password) === false) {
-          setPasswordError(
-            "Password must have an Uppercase a Lowercase and at least 6 character"
-          );
-          return;
-        }
-
-        console.log(user);
+        console.log(userData);
 
         updateUser({ displayName: userName, photoURL: photo })
           .then(() => {
             setUser({ ...userData, displayName: userName, photoURL: photo });
             setPasswordError("");
+            Swal.fire({
+              title: `welcome ${userName}`,
+              text: "Successfully Created Account",
+              icon: "success",
+            });
           })
           .catch((error) => {
             console.log(error);
             setUser(userData);
           });
-        Swal.fire({
-          title: `welcome ${user.displayName}`,
-          text: "Successfully Created Account",
-          icon: "success",
-        });
       })
       .catch((error) => {
+        console.log(error);
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -82,7 +82,7 @@ const Register = () => {
       </Helmet>
       <h1 className="text-4xl font-semibold">Please Register</h1>
       <form onSubmit={handleRegister} className="space-y-4">
-      {/* user name */}
+        {/* user name */}
         <label className="input validator">
           <svg
             className="h-[1em] opacity-50"
@@ -183,8 +183,7 @@ const Register = () => {
             required
             name="password"
             placeholder="Password"
-            minLength="8"
-            title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+            title="Must be more than 6 characters, including number, lowercase letter, uppercase letter"
           />
           <button
             type="button"
