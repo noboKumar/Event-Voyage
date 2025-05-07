@@ -4,7 +4,7 @@
 Event Explorer is a web application designed to help users discover, explore, and get detailed information about upcoming local events like conferences, workshops, sports events, art exhibitions, and more. Users can log in, browse events, view detailed info and reserve Seat.
 
 **Live URL:**  
-[Live Link](https://ph-assignment-09-event-voyage.netlify.app/)
+[https://ph-assignment-09-event-voyage.netlify.app/](https://ph-assignment-09-event-voyage.netlify.app/)
 
 ---
 
