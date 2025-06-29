@@ -39,3 +39,33 @@ Event Explorer is a web application designed to help users discover, explore, an
 - **sweetalert2** – Show Success or Error alerts
 - **swiper** – Slider View
 
+🚀 Run the Project Locally:
+
+Clone the Repository
+```bash
+git clone https://github.com/noboKumar/Event-Voyage.git
+cd Event-Voyage
+```
+
+Install Dependencies
+```bash
+npm install
+```
+
+Set Up Environment Variables
+
+Create a .env file in the root directory and add your Firebase config:
+```bash
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+Start the Development Server
+```bash
+npm run dev
+```
+The app will now be running on http://localhost:5173
+
